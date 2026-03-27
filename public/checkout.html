@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | Nuvix</title>
+    <link rel="stylesheet" href="./css/checkout.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar__inner">
+            <div class="navbar__logo">Nuvix</div>
+            <ul class="navbar__links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#">Laptops</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Tablets</a></li>
+                <li><a href="#">Accessories</a></li>
+            </ul>
+            <button class="navbar__cart" aria-label="Cart">
+                <span class="material-symbols-outlined">shopping_cart</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <main>
+
+        <!-- Progress Steps -->
+        <div class="progress">
+            <div class="progress__track">
+                <div class="progress__line-bg"></div>
+                <div class="progress__line-fill"></div>
+
+                <div class="progress__step">
+                    <div class="progress__circle progress__circle--done">
+                        <span class="material-symbols-outlined" style="font-size:1rem">check</span>
+                    </div>
+                    <span class="progress__label progress__label--done">Shipping</span>
+                </div>
+
+                <div class="progress__step">
+                    <div class="progress__circle progress__circle--active">2</div>
+                    <span class="progress__label progress__label--active">Payment</span>
+                </div>
+
+                <div class="progress__step">
+                    <div class="progress__circle progress__circle--pending">3</div>
+                    <span class="progress__label progress__label--pending">Review</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Checkout Grid -->
+        <div class="checkout-grid">
+
+            <!-- Left: Forms -->
+            <div class="forms-col">
+
+                <!-- Shipping Address -->
+                <section class="form-section">
+                    <div class="form-section__header">
+                        <span class="material-symbols-outlined">local_shipping</span>
+                        <h2 class="form-section__title">Shipping Address</h2>
+                    </div>
+                    <div class="form-grid">
+                        <div class="form-field form-field--full">
+                            <label for="fullname">Full Name</label>
+                            <input id="fullname" type="text" placeholder="Johnathan Doe" />
+                        </div>
+                        <div class="form-field form-field--full">
+                            <label for="email">Email Address</label>
+                            <input id="email" type="email" placeholder="john@Nuvix.com" />
+                        </div>
+                        <div class="form-field form-field--full">
+                            <label for="address">Street Address</label>
+                            <input id="address" type="text" placeholder="123 Quantum Drive, Sector 7" />
+                        </div>
+                        <div class="form-field">
+                            <label for="phone">Phone Number</label>
+                            <input id="phone" type="tel" placeholder="+213 555 000 000" />
+                        </div>
+                        <div class="form-field">
+                            <label for="postal">Postal Code</label>
+                            <input id="postal" type="text" placeholder="25000" />
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Payment Method -->
+                <section class="form-section">
+                    <div class="form-section__header">
+                        <span class="material-symbols-outlined">account_balance_wallet</span>
+                        <h2 class="form-section__title">Payment Method</h2>
+                    </div>
+
+                    <div class="payment-tabs">
+                        <button class="payment-tab payment-tab--active" id="tab-card" onclick="selectPayment('card')">
+                            <span class="material-symbols-outlined">credit_card</span>
+                            <span class="payment-tab__label">Credit Card</span>
+                        </button>
+                        <button class="payment-tab payment-tab--inactive" id="tab-wire" onclick="selectPayment('wire')">
+                            <span class="material-symbols-outlined">account_balance</span>
+                            <span class="payment-tab__label">Wire Transfer</span>
+                        </button>
+                    </div>
+
+                    <div class="form-grid" id="card-fields">
+                        <div class="form-field form-field--full">
+                            <label for="cardnum">Card Number</label>
+                            <div class="card-input-wrap">
+                                <input id="cardnum" type="text" placeholder="0000 0000 0000 0000" />
+                                <span class="material-symbols-outlined card-input-icon">credit_card</span>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label for="expiry">Expiry Date</label>
+                            <input id="expiry" type="text" placeholder="MM / YY" />
+                        </div>
+                        <div class="form-field">
+                            <label for="cvv">CVC / CVV</label>
+                            <input id="cvv" type="text" placeholder="123" />
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <!-- Right: Order Summary -->
+            <aside class="summary-aside">
+
+                <div class="summary-card">
+                    <div class="summary-card__title">Order Summary</div>
+
+                    <div class="order-items">
+                        <div class="order-item">
+                            <div class="order-item__img">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZkA2NBqXqML3_jWNLeKWtvzw0x31dLkMy6jzexguEjyac3yGp0sDe0F3e2TsA2h8j2v09Ug22zkqXFJmLaNRStTgoVYj6aDqXldbUjLR9NAC-Xjxz_ATTIIWFy4K1n5h7liLr3Hydaz9sT4EP-PoJqnlB5iQT5swv10cg4EuUbHm63wqVu1OzdII-5WwSbRB3AJlL5lRirRbmN7a2cPALXMNMJWleJHincE-Vt1c2Ipc8xC4DWEoXNXkGMZ1V4uTe8Umu3bIAONzG"
+                                    alt="NovaBook Pro 16" />
+                            </div>
+                            <div class="order-item__body">
+                                <div class="order-item__name">NovaBook Pro 16</div>
+                                <div class="order-item__variant">1TB SSD · 32GB RAM</div>
+                                <div class="order-item__footer">
+                                    <span class="order-item__qty">Qty: 1</span>
+                                    <span class="order-item__price">$2,499.00</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="order-item">
+                            <div class="order-item__img">
+                                <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWgee9dBwtbBcV7JRzQCb4sImrLkARzJT22f5u3V7FTA-p704DTEcGBa3QlTfb3clI7VKcnvczkBi-BNaz_WJmcZXLZ9JhOsV02Ku6swGelLkAqxKS-jmWf967i6ss5g0HdXMYgb1goT2KUtMcBNNyQjzGKpJ9iLPLyh34QkiYkx51ShQFxBqx9HnKoJKZu2v2UOZw19kNm96saDs589yg_b8KAHLniuQXM9e2WYeLdz1oyrq9DsCoQXGpVrBQxjVQWGCFVyDzh8sQ"
+                                    alt="NovaPhone Ultra" />
+                            </div>
+                            <div class="order-item__body">
+                                <div class="order-item__name">NovaPhone Ultra</div>
+                                <div class="order-item__variant">Obsidian Black · 512GB</div>
+                                <div class="order-item__footer">
+                                    <span class="order-item__qty">Qty: 1</span>
+                                    <span class="order-item__price">$1,199.00</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="price-breakdown">
+                        <div class="price-row">
+                            <span>Subtotal</span>
+                            <span>$3,698.00</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Shipping</span>
+                            <span class="free">FREE</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Tax (8%)</span>
+                            <span>$295.84</span>
+                        </div>
+                        <div class="price-total">
+                            <span class="price-total__label">Total</span>
+                            <span class="price-total__amount">$3,993.84</span>
+                        </div>
+                    </div>
+
+                    <button class="btn-place-order">Place Order</button>
+
+                    <p class="ssl-note">
+                        <span class="material-symbols-outlined">lock</span>
+                        SSL Encrypted Checkout
+                    </p>
+                </div>
+
+                <!-- Warranty Upsell -->
+                <div class="upsell-card">
+                    <span class="material-symbols-outlined">verified_user</span>
+                    <div>
+                        <div class="upsell-title">Nuvix Care+</div>
+                        <p class="upsell-desc">Add 2-year accidental damage protection for $199.</p>
+                        <button class="btn-upsell">Add Protection</button>
+                    </div>
+                </div>
+
+            </aside>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer__inner">
+            <div>
+                <div class="footer__brand">Nuvix</div>
+                <p class="footer__tagline">Engineering the future of personal technology. Precision-built components
+                    with atmospheric clarity.</p>
+            </div>
+            <div class="footer__col">
+                <div class="footer__col-title">Store Info</div>
+                <ul>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Returns & Warranty</a></li>
+                    <li><a href="#">Shipping Policy</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="footer__col-title">Social</div>
+                <div class="social-links">
+                    <a href="#" class="social-btn" aria-label="Email">
+                        <span class="material-symbols-outlined">alternate_email</span>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="Podcast">
+                        <span class="material-symbols-outlined">podcasts</span>
+                    </a>
+                </div>
+                <p class="footer__copy">© 2025 Nuvix Electronics. Engineered for Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function selectPayment(type) {
+            const cardTab = document.getElementById('tab-card')
+            const wireTab = document.getElementById('tab-wire')
+            const cardFields = document.getElementById('card-fields')
+
+            if (type === 'card') {
+                cardTab.className = 'payment-tab payment-tab--active'
+                wireTab.className = 'payment-tab payment-tab--inactive'
+                cardFields.style.display = 'grid'
+            } else {
+                wireTab.className = 'payment-tab payment-tab--active'
+                cardTab.className = 'payment-tab payment-tab--inactive'
+                cardFields.style.display = 'none'
+            }
+        }
+    </script>
+
+</body>
+
+</html>

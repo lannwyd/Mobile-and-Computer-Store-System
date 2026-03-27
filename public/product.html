@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NovaBook Pro X1 — Nuvix Store</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/product.css">
+
+</head>
+
+<body>
+
+    <!-- ── Navbar ──────────────────────────────────────────── -->
+    <nav class="navbar">
+        <div class="navbar__inner">
+            <div class="navbar__logo">Nuvix</div>
+            <ul class="navbar__links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Products</a></li>
+                <li><a href="#" class="active">Laptops</a></li>
+                <li><a href="#">Mobiles</a></li>
+                <li><a href="#">Tablets</a></li>
+                <li><a href="#">Accessories</a></li>
+            </ul>
+            <div class="navbar__actions">
+                <button class="navbar__icon-btn" aria-label="Search">
+                    <span class="material-symbols-outlined">search</span>
+                </button>
+                <button class="navbar__icon-btn" aria-label="Cart">
+                    <span class="material-symbols-outlined">shopping_cart</span>
+                    <span class="cart-dot"></span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ── Main ────────────────────────────────────────────── -->
+    <main>
+
+        <!-- Breadcrumbs -->
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+            <a href="#">Home</a>
+            <span class="material-symbols-outlined">chevron_right</span>
+            <a href="#">Laptops</a>
+            <span class="material-symbols-outlined">chevron_right</span>
+            <span>NovaBook Pro X1</span>
+        </nav>
+
+        <!-- Product Layout -->
+        <div class="product-layout">
+
+            <!-- Gallery -->
+            <div class="gallery">
+                <div class="gallery__thumbnails" id="thumbnails">
+                    <button class="gallery__thumb active" onclick="switchImage(this, 0)">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrDJYB0aM-VCh-F5mBne1f76cjzPgB6AG3_JxMQPRXFI9TlYlfO9qVnVznTdWA8ziXlO1T7U9ZTLuB5eM1MhDwTAJXT-EGhwlmRqTBa2nZZ0GzWWWGhxjShUzy2uX7jOqK4lO5Obn2SzaIYP1MEz2tLMUmHdzvkLyCof57S4iA_USbfLUjr4jQ6vhZZhMCdmTNOiQ1ctoR7B45vwFKO2gfZ43HK2E7BcJ28wEuRhOHnKDf-7tk-HwAFtZHzax_I43ZDfzXEyCfy_Y4"
+                            alt="View 1" />
+                    </button>
+                    <button class="gallery__thumb" onclick="switchImage(this, 1)">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsl0_iMbXUbQ-KSsmCBgiyh9HM6C_BfqujCuT79C3rYXaea1309eej7u4t7wL2zg3kT18m4U_HbURF4lwIMPTDPatQnQzrWFMvCHf1AOoUH-ul0gsTvW1aca5-ytnAtFRq4bOmoDawlrs7k83UN3EGt8iOcTSaDT_4kwQgCrVYREP6C4Nai_kzYGAOUhi4tVyIPUuhzDfUyHK5wIhMf7hrhYp4EgVfiZFfYEUECEiVrxP_GzTM8FHpr3qqQ0goOEJZyT-x65-X2jyz"
+                            alt="View 2" />
+                    </button>
+                    <button class="gallery__thumb" onclick="switchImage(this, 2)">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkTIcNcasQ32BIFPOAzgn8F40n5UeYcJiHP0ma9Lh-VAeFVqQJQQr3eCBUcd6_HhpJGHW5Q2Sb1aqBpxWjXO1jtrhhbgZtdxpmsNyGbV_SiIUiQGGZxLQrp3spK99BxnZLKWet4XHRkhfTfdwP7ABYtuKxQmRqBMeW6iYY3IILqFmH-0JALd_l8AfgWAYWlLOaR9MXLTWk-lKSNuTwb1iIpAxx__PtS6AiMiuWThMTJZXme_xlG74mLcd3x-1T68NLsc80rOZ4Kct7"
+                            alt="View 3" />
+                    </button>
+                    <button class="gallery__thumb" onclick="switchImage(this, 3)">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk1nJxS3IH0lh1GepW9Xe5oEH8ELAvlj11dlXCs74EU3S3zBTDft2USU0RRqcD3H7Xghy6qYQzr23uvZJM1BCWmt14yMo4smSmEQ476nZIo98DUKRiVl6HO7BZNRD-V7DLrRl0Mzl3mI06l2uM6paKKEjcSPh-dio7qEJuUdUHGHqyQdEoEeCQgCRQ-hmfoSPNhEkdwqUG_JaRGqU29xlP5nrI7CJHhnyQq0Vm65U-YLKcxAYcPEsFtt1jxVuhXvW_6G1hfqwR4Sqy"
+                            alt="View 4" />
+                    </button>
+                </div>
+
+                <div class="gallery__main">
+                    <img id="main-image"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJGRtVDxIFrmS-8cjasXiGgo17jW7noBBgoGku2blFjtH02eu4i_nj8InUOy0-VvzMEjfjJpiZ9R0OOxz42CK6E8hNa1LizssBYb_Gy6oWSJqVWdsSmBaWJ2RRjRy4qFxPrJrXBs2PpD837yV6sqz8-h3QJIgnPU2QkkaUQiX0e7Pj4A9nObpGfj26Yz3zzfO-W_ebuWugMPsP8gBby4cUP7JI3rAFu3QekOrvg49127-op4GvNaF8iFniReq2jpUymXaKhupHYycc"
+                        alt="NovaBook Pro X1" />
+                    <span class="gallery__badge">New Arrival</span>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div class="product-info">
+                <div class="product-info__header">
+                    <h1>NovaBook Pro X1</h1>
+                    <div class="product-info__rating">
+                        <div class="stars">
+                            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+                            <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
+                            <span class="material-symbols-outlined"
+                                style="font-variation-settings:'FILL' 0">star_half</span>
+                        </div>
+                        <span class="rating-count">(128 reviews)</span>
+                    </div>
+                    <div class="product-info__price">$1,899.00</div>
+                </div>
+
+                <!-- Specs -->
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-card__label">Processor</div>
+                        <div class="spec-card__value">T2 Neon Chip</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-card__label">Memory</div>
+                        <div class="spec-card__value">32GB Unified</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-card__label">Storage</div>
+                        <div class="spec-card__value">Up to 2TB SSD</div>
+                    </div>
+                    <div class="spec-card">
+                        <div class="spec-card__label">Battery</div>
+                        <div class="spec-card__value">22 Hours</div>
+                    </div>
+                </div>
+
+                <!-- Options -->
+                <div class="options">
+                    <div>
+                        <div class="option-label">Color</div>
+                        <div class="color-options">
+                            <button class="color-btn active" style="background:#0b0e14" title="Midnight"
+                                onclick="selectColor(this)"></button>
+                            <button class="color-btn" style="background:#3d424d" title="Space Gray"
+                                onclick="selectColor(this)"></button>
+                            <button class="color-btn" style="background:#e3e4e6" title="Silver"
+                                onclick="selectColor(this)"></button>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="option-label">Storage</div>
+                        <div class="storage-options">
+                            <button class="storage-btn active" onclick="selectStorage(this)">128GB</button>
+                            <button class="storage-btn" onclick="selectStorage(this)">256GB</button>
+                            <button class="storage-btn" onclick="selectStorage(this)">512GB</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA -->
+                <div class="cta-group">
+                    <button class="btn-buy">Buy Now</button>
+                    <button class="btn-cart">Add to Cart</button>
+                </div>
+
+                <!-- Perks -->
+                <div class="perks">
+                    <div class="perk">
+                        <span class="material-symbols-outlined">local_shipping</span>
+                        Free Shipping
+                    </div>
+                    <div class="perk">
+                        <span class="material-symbols-outlined">verified_user</span>
+                        2 Year Warranty
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Related Products -->
+        <section class="related-section">
+            <h2 class="section-title">You Might Also Like</h2>
+            <div class="related-grid">
+                <div class="related-card">
+                    <div class="related-card__img">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-pYHbtFeLgtGAy3PddyxWvYh72Ujw8dWdzNZojHlx1aCgtbphLHQSYYwsCl7ddKCnPqPgcOKdaD-FLtOtOEvO-Kv78st4yN6-Gw5X_ZeGorjB1dBO3iNbenj7XYYMqxW6LwSVbimqs0JWdvtxsCU6tWMt9ZxM9KLiBAQdQjHK4WR6GKMONdaSouZ1_EUoz9OB7K49UJfD3D8_FtCTOoCRcEgYikmPaxaRTmgn3UAFpPDlB2FA6wHmhkFttHPAfs4-9NnAFhJkMu0p"
+                            alt="NovaTab Ultra" />
+                    </div>
+                    <div class="related-card__body">
+                        <div class="related-card__name">NovaTab Ultra</div>
+                        <div class="related-card__desc">The ultimate creative companion.</div>
+                        <div class="related-card__footer">
+                            <span class="related-card__price">$999</span>
+                            <span class="material-symbols-outlined related-card__arrow">arrow_forward</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="related-card">
+                    <div class="related-card__img">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoBho7Zfqb81oQlKkb0yW73AOkvq1jNzGM3M0yTst14S3mZW9_sOADyopts3KuhrPdLKVxMUwpDX6M9TEwIVDNwvRnT1CPgLyE0qKRgI_Bammlnbb0mv6aaIJUKbdgxtPkBbYLUqhFSJxF0MGHpYwizsJyHQofCxk8BTVUGoahf_pc2HurtD1JXLHo2aUsz0AvrTB063JXuRgV64XUpJjgQd61lbYIlLeCB4-GS30xyg69easzH8N7vQ-b8A8bgltzrMK5bI5VMnMm"
+                            alt="NovaPhone 15 Pro" />
+                    </div>
+                    <div class="related-card__body">
+                        <div class="related-card__name">NovaPhone 15 Pro</div>
+                        <div class="related-card__desc">Precision in your pocket.</div>
+                        <div class="related-card__footer">
+                            <span class="related-card__price">$1,199</span>
+                            <span class="material-symbols-outlined related-card__arrow">arrow_forward</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="related-card">
+                    <div class="related-card__img">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS6AMmw3_8thbVVwzufIBV9q6UsTKlhQjm-gaPS7F9Gst-76NAq_QSucPoE9vyuwdolHIJ6ugU5069C18nH6baqg3afHtmct5cNW9QHJzbZ99KtysjHfXYa5ynQ8BPllDpEOqnX5jqUQxCLvWuWudZYlaNOFpLvUGeqnLniV6utZOhkEhte9Glo11t6u1c07h4uWh9ZMrS0nJOQShT4ZzXXlOaqqPvOXFIA4iTB2UmOB_0DKsGAzhiIWKNHS7IlnfECf569mv3bGCi"
+                            alt="SonicNova Studio" />
+                    </div>
+                    <div class="related-card__body">
+                        <div class="related-card__name">SonicNova Studio</div>
+                        <div class="related-card__desc">Spatial audio redefined.</div>
+                        <div class="related-card__footer">
+                            <span class="related-card__price">$349</span>
+                            <span class="material-symbols-outlined related-card__arrow">arrow_forward</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="related-card">
+                    <div class="related-card__img">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU21lWmMrWF733byw-eG690KTujjuxZq5s_tgjAp3wlgwNcSc0HZ1RGgl_CIkDyssxAuLCU8z1eu5PrK8nmzqg4wTdyzLL398SNH7FBIZPMNG6t8ZXjM2-FVai8eHcKI_DYA9AGzIjNH8CDxYlEwLy3YKeN_ENpIQMK-Z7qkA9_hnUwABAIl62nIWqQRmlWqO-8IllZYtt6NQrCDYxizOFx0XxJom4zdf0R8gvLfPFjyWCgtvhke5qrs_-1QQobX1gLgDAVme4xA5K"
+                            alt="Nova Drive 2TB" />
+                    </div>
+                    <div class="related-card__body">
+                        <div class="related-card__name">Nova Drive 2TB</div>
+                        <div class="related-card__desc">Blazing fast external storage.</div>
+                        <div class="related-card__footer">
+                            <span class="related-card__price">$199</span>
+                            <span class="material-symbols-outlined related-card__arrow">arrow_forward</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ── Footer ──────────────────────────────────────────── -->
+    <footer>
+        <div class="footer__inner">
+            <div>
+                <div class="footer__brand-name">Nuvix</div>
+                <p class="footer__tagline">Elevating human potential through cutting-edge hardware and seamless
+                    integration. Engineered for the next generation.</p>
+            </div>
+            <div class="footer__links-group">
+                <div class="footer__col">
+                    <div class="footer__col-title">Store Info</div>
+                    <ul>
+                        <li><a href="#">Find a Store</a></li>
+                        <li><a href="#">Corporate</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer__col">
+                    <div class="footer__col-title">Social</div>
+                    <ul>
+                        <li><a href="#">Twitter</a></li>
+                        <li><a href="#">Instagram</a></li>
+                        <li><a href="#">LinkedIn</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div>
+                <div class="footer__newsletter-title">Newsletter</div>
+                <div class="footer__newsletter-form">
+                    <input type="email" placeholder="Enter your email" />
+                    <button>Join</button>
+                </div>
+                <p class="footer__copy">© 2025 Nuvix Electronics. Engineered for Excellence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // ── Gallery image switcher ──────────────────────────
+        const images = [
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuDJGRtVDxIFrmS-8cjasXiGgo17jW7noBBgoGku2blFjtH02eu4i_nj8InUOy0-VvzMEjfjJpiZ9R0OOxz42CK6E8hNa1LizssBYb_Gy6oWSJqVWdsSmBaWJ2RRjRy4qFxPrJrXBs2PpD837yV6sqz8-h3QJIgnPU2QkkaUQiX0e7Pj4A9nObpGfj26Yz3zzfO-W_ebuWugMPsP8gBby4cUP7JI3rAFu3QekOrvg49127-op4GvNaF8iFniReq2jpUymXaKhupHYycc",
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuCsl0_iMbXUbQ-KSsmCBgiyh9HM6C_BfqujCuT79C3rYXaea1309eej7u4t7wL2zg3kT18m4U_HbURF4lwIMPTDPatQnQzrWFMvCHf1AOoUH-ul0gsTvW1aca5-ytnAtFRq4bOmoDawlrs7k83UN3EGt8iOcTSaDT_4kwQgCrVYREP6C4Nai_kzYGAOUhi4tVyIPUuhzDfUyHK5wIhMf7hrhYp4EgVfiZFfYEUECEiVrxP_GzTM8FHpr3qqQ0goOEJZyT-x65-X2jyz",
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuAkTIcNcasQ32BIFPOAzgn8F40n5UeYcJiHP0ma9Lh-VAeFVqQJQQr3eCBUcd6_HhpJGHW5Q2Sb1aqBpxWjXO1jtrhhbgZtdxpmsNyGbV_SiIUiQGGZxLQrp3spK99BxnZLKWet4XHRkhfTfdwP7ABYtuKxQmRqBMeW6iYY3IILqFmH-0JALd_l8AfgWAYWlLOaR9MXLTWk-lKSNuTwb1iIpAxx__PtS6AiMiuWThMTJZXme_xlG74mLcd3x-1T68NLsc80rOZ4Kct7",
+            "https://lh3.googleusercontent.com/aida-public/AB6AXuDk1nJxS3IH0lh1GepW9Xe5oEH8ELAvlj11dlXCs74EU3S3zBTDft2USU0RRqcD3H7Xghy6qYQzr23uvZJM1BCWmt14yMo4smSmEQ476nZIo98DUKRiVl6HO7BZNRD-V7DLrRl0Mzl3mI06l2uM6paKKEjcSPh-dio7qEJuUdUHGHqyQdEoEeCQgCRQ-hmfoSPNhEkdwqUG_JaRGqU29xlP5nrI7CJHhnyQq0Vm65U-YLKcxAYcPEsFtt1jxVuhXvW_6G1hfqwR4Sqy"
+        ]
+
+        function switchImage(btn, index) {
+            document.getElementById('main-image').src = images[index]
+            document.querySelectorAll('.gallery__thumb').forEach(t => t.classList.remove('active'))
+            btn.classList.add('active')
+        }
+
+        // ── Color selection ─────────────────────────────────
+        function selectColor(btn) {
+            document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('active'))
+            btn.classList.add('active')
+        }
+
+        // ── Storage selection ───────────────────────────────
+        function selectStorage(btn) {
+            document.querySelectorAll('.storage-btn').forEach(b => b.classList.remove('active'))
+            btn.classList.add('active')
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart | Nuvix</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="./css/cart.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar__inner">
+            <div class="navbar__left">
+                <a href="#" class="navbar__logo">
+                    <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"
+                            fill="currentColor" />
+                    </svg>
+                    Nuvix
+                </a>
+                <ul class="navbar__links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Products</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div class="navbar__right">
+                <div class="navbar__search">
+                    <span class="material-symbols-outlined">search</span>
+                    <input type="text" placeholder="Search" />
+                </div>
+                <button class="navbar__btn">Cart (3)</button>
+                <button class="navbar__btn">Account</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main -->
+    <main>
+
+        <!-- Page Header -->
+        <div class="page-header">
+            <div>
+                <h1 class="page-header__title">Cart</h1>
+                <p class="page-header__sub">Review your selected items before proceeding to checkout.</p>
+            </div>
+            <a href="#" class="continue-link">
+                <span class="material-symbols-outlined">arrow_back</span>
+                Continue Shopping
+            </a>
+        </div>
+
+        <!-- Layout -->
+        <div class="cart-layout">
+
+            <!-- Cart Items -->
+            <div class="cart-items-col">
+
+                <!-- Item 1 -->
+                <div class="cart-item">
+                    <div class="cart-item__img">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjc21Bex5BPVUgMfY6o3e8PHtARDD-o00yXmS23pAmGrvKlmW-CrOMKqX-zpWmt_i9IUmkkWoOmUUlvpcgs2YsQRQU55VMwFsPN3Gt5-cVtT1Ns-zLNWNklYsjNUM1z_4Ocu9E9ZPHvk5843U8lRJpM_uEgRwtkYkLH5FAEF2skrqmMIDbixPPb7vi9wktt7E3LlltzlLgYYF6DSKqSO8ejYVxvJPMIUSxEHL9PLHG4ickkP1gzv5CoXCt2KGrISJM_GZcTbdl0nRv"
+                            alt="Nuvix Pro 15" />
+                    </div>
+                    <div class="cart-item__body">
+                        <div class="cart-item__top">
+                            <div>
+                                <div class="cart-item__name">Nuvix Pro 15</div>
+                                <div class="cart-item__tags">
+                                    <span class="tag">1TB SSD</span>
+                                    <span class="tag">32GB RAM</span>
+                                </div>
+                            </div>
+                            <span class="cart-item__price">$2,499.00</span>
+                        </div>
+                        <div class="cart-item__bottom">
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="changeQty(this, -1)" aria-label="Decrease">
+                                    <span class="material-symbols-outlined">remove</span>
+                                </button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn" onclick="changeQty(this, 1)" aria-label="Increase">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                            <button class="btn-remove" onclick="removeItem(this)">
+                                <span class="material-symbols-outlined">delete</span>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="cart-item">
+                    <div class="cart-item__img">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxXspxymq19KLArHUUsPop3DEZONzk6-J3Gn9K4BEihrcIDbLPiLqfPKIjp1fsPtXcY6iOwVpOKM7hDOWPYRcZ3KqU5SwT64TkYtiCpgCn4zYjl2VFEUH_eCTC4FV1oyw_zSowdvHeHCXZavIt50-P7SaDKvGqgx9vUMCE6uQ7XonhOBgzPV35nzysXZ6ZYP2b6ssntjLRWvddhSW4Wt_UO3p3QCraFCCEiUki8kSN6ZrS5Yy9OkFLsTS1f-WrPrY20rEc-FbEiYAo"
+                            alt="Nuvix X Watch" />
+                    </div>
+                    <div class="cart-item__body">
+                        <div class="cart-item__top">
+                            <div>
+                                <div class="cart-item__name">Nuvix X</div>
+                                <div class="cart-item__tags">
+                                    <span class="tag">Titanium</span>
+                                    <span class="tag">LTE</span>
+                                </div>
+                            </div>
+                            <span class="cart-item__price">$499.00</span>
+                        </div>
+                        <div class="cart-item__bottom">
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="changeQty(this, -1)" aria-label="Decrease">
+                                    <span class="material-symbols-outlined">remove</span>
+                                </button>
+                                <span class="qty-value">1</span>
+                                <button class="qty-btn" onclick="changeQty(this, 1)" aria-label="Increase">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                            <button class="btn-remove" onclick="removeItem(this)">
+                                <span class="material-symbols-outlined">delete</span>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="cart-item">
+                    <div class="cart-item__img">
+                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSXuRmcg6lroiCCeTCBnX9VsMhp6LoUTBPqvg3jxLk_C8q0QJ5YkgS_OO7nX2AtuFi-DnCrlVoh5tDwlxEDA0n-PqXjkLejB85M8ZwKd11n357PR100a8cL0dl_udD7hRyxQ0v2UrUwV316oQYXEpVprdmX6yDhfTG1NCdm7SdYyALYT-CsINpMixEHhU-nauU5-yl73L3pF16AW_rx2nwVy81rSZBUsouvQTfv9aT6RjhuGtvE811jPfpaNOZ3sLn1kmfD_vrfMaA"
+                            alt="Nuvix Audio" />
+                    </div>
+                    <div class="cart-item__body">
+                        <div class="cart-item__top">
+                            <div>
+                                <div class="cart-item__name">Nuvix Audio</div>
+                                <div class="cart-item__tags">
+                                    <span class="tag">Noise Cancelling</span>
+                                </div>
+                            </div>
+                            <span class="cart-item__price">$299.00</span>
+                        </div>
+                        <div class="cart-item__bottom">
+                            <div class="qty-control">
+                                <button class="qty-btn" onclick="changeQty(this, -1)" aria-label="Decrease">
+                                    <span class="material-symbols-outlined">remove</span>
+                                </button>
+                                <span class="qty-value">2</span>
+                                <button class="qty-btn" onclick="changeQty(this, 1)" aria-label="Increase">
+                                    <span class="material-symbols-outlined">add</span>
+                                </button>
+                            </div>
+                            <button class="btn-remove" onclick="removeItem(this)">
+                                <span class="material-symbols-outlined">delete</span>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Summary -->
+            <div class="cart-summary-col">
+                <div class="summary-card">
+                    <div class="summary-card__title">Summary</div>
+
+                    <div class="summary-rows">
+                        <div class="summary-row">
+                            <span>Subtotal</span>
+                            <span id="subtotal">$3,596.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Shipping</span>
+                            <span>Free</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (calculated at checkout)</span>
+                            <span>--</span>
+                        </div>
+                    </div>
+
+                    <div class="summary-divider"></div>
+
+                    <div class="summary-total">
+                        <span class="summary-total__label">Total Cost</span>
+                        <span class="summary-total__amount" id="total">$3,596.00</span>
+                    </div>
+
+                    <button class="btn-checkout">
+                        Proceed to Checkout
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+
+                    <div class="secure-note">
+                        <span class="material-symbols-outlined">lock</span>
+                        <!--Secure Encrypted Checkout-->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer__inner">
+            <div class="footer__top">
+                <div>
+                    <div class="footer__brand">
+                        <svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M24 45.8096C19.6865 45.8096 15.4698 44.5305 11.8832 42.134C8.29667 39.7376 5.50128 36.3314 3.85056 32.3462C2.19985 28.361 1.76794 23.9758 2.60947 19.7452C3.451 15.5145 5.52816 11.6284 8.57829 8.5783C11.6284 5.52817 15.5145 3.45101 19.7452 2.60948C23.9758 1.76795 28.361 2.19986 32.3462 3.85057C36.3314 5.50129 39.7376 8.29668 42.134 11.8833C44.5305 15.4698 45.8096 19.6865 45.8096 24L24 24L24 45.8096Z"
+                                fill="currentColor" />
+                        </svg>
+                        <span class="footer__brand-name">Nuvix</span>
+                    </div>
+                    <p class="footer__desc">Engineering the future of personal technology. Precision hardware for the
+                        intentional user.</p>
+                </div>
+                <div class="footer__links-wrap">
+                    <div class="footer__col">
+                        <span class="footer__col-title">Products</span>
+                        <a href="#">Laptops</a>
+                        <a href="#">Wearables</a>
+                        <a href="#">Audio</a>
+                    </div>
+                    <div class="footer__col">
+                        <span class="footer__col-title">Support</span>
+                        <a href="#">Order Tracking</a>
+                        <a href="#">Warranty</a>
+                        <a href="#">Contact</a>
+                    </div>
+                    <div class="footer__col">
+                        <span class="footer__col-title">Company</span>
+                        <a href="#">About Us</a>
+                        <a href="#">Careers</a>
+                        <a href="#">Press</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copy">© 2025 Nuvix Inc. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Quantity change
+        function changeQty(btn, delta) {
+            const qtyEl = btn.closest('.qty-control').querySelector('.qty-value')
+            let qty = parseInt(qtyEl.textContent) + delta
+            if (qty < 1) qty = 1
+            qtyEl.textContent = qty
+        }
+
+        // Remove item
+        function removeItem(btn) {
+            const item = btn.closest('.cart-item')
+            item.style.transition = 'opacity 0.3s, transform 0.3s'
+            item.style.opacity = '0'
+            item.style.transform = 'translateX(20px)'
+            setTimeout(() => item.remove(), 300)
+        }
+    </script>
+
+</body>
+
+</html>
