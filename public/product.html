@@ -16,78 +16,47 @@
 <body>
 
     <!-- ── Navbar ──────────────────────────────────────────── -->
-    <nav class="navbar">
-        <div class="navbar__inner">
-            <div class="navbar__logo">Nuvix</div>
-            <ul class="navbar__links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Products</a></li>
-                <li><a href="#" class="active">Laptops</a></li>
-                <li><a href="#">Mobiles</a></li>
-                <li><a href="#">Tablets</a></li>
-                <li><a href="#">Accessories</a></li>
-            </ul>
-            <div class="navbar__actions">
-                <button class="navbar__icon-btn" aria-label="Search">
-                    <span class="material-symbols-outlined">search</span>
-                </button>
-                <button class="navbar__icon-btn" aria-label="Cart">
-                    <span class="material-symbols-outlined">shopping_cart</span>
-                    <span class="cart-dot"></span>
-                </button>
-            </div>
+    <nav class="nav">
+        <div class="nav__logo">Nuvix</div>
+
+        <ul class="nav__links">
+            <li><a href="./index.html" class="active">
+                    Home
+                </a></li>
+
+        </ul>
+
+        <div class="nav__actions">
+            <a href="./cart.html" class="btn-icon""><svg xmlns=" http://www.w3.org/2000/svg" width="18" height="18"
+                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                </svg>
+            </a>
         </div>
     </nav>
 
     <!-- ── Main ────────────────────────────────────────────── -->
     <main>
-
-        <!-- Breadcrumbs -->
-        <nav class="breadcrumbs" aria-label="Breadcrumb">
-            <a href="#">Home</a>
-            <span class="material-symbols-outlined">chevron_right</span>
-            <a href="#">Laptops</a>
-            <span class="material-symbols-outlined">chevron_right</span>
-            <span>NovaBook Pro X1</span>
-        </nav>
-
         <!-- Product Layout -->
         <div class="product-layout">
 
             <!-- Gallery -->
             <div class="gallery">
-                <div class="gallery__thumbnails" id="thumbnails">
-                    <button class="gallery__thumb active" onclick="switchImage(this, 0)">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrDJYB0aM-VCh-F5mBne1f76cjzPgB6AG3_JxMQPRXFI9TlYlfO9qVnVznTdWA8ziXlO1T7U9ZTLuB5eM1MhDwTAJXT-EGhwlmRqTBa2nZZ0GzWWWGhxjShUzy2uX7jOqK4lO5Obn2SzaIYP1MEz2tLMUmHdzvkLyCof57S4iA_USbfLUjr4jQ6vhZZhMCdmTNOiQ1ctoR7B45vwFKO2gfZ43HK2E7BcJ28wEuRhOHnKDf-7tk-HwAFtZHzax_I43ZDfzXEyCfy_Y4"
-                            alt="View 1" />
-                    </button>
-                    <button class="gallery__thumb" onclick="switchImage(this, 1)">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsl0_iMbXUbQ-KSsmCBgiyh9HM6C_BfqujCuT79C3rYXaea1309eej7u4t7wL2zg3kT18m4U_HbURF4lwIMPTDPatQnQzrWFMvCHf1AOoUH-ul0gsTvW1aca5-ytnAtFRq4bOmoDawlrs7k83UN3EGt8iOcTSaDT_4kwQgCrVYREP6C4Nai_kzYGAOUhi4tVyIPUuhzDfUyHK5wIhMf7hrhYp4EgVfiZFfYEUECEiVrxP_GzTM8FHpr3qqQ0goOEJZyT-x65-X2jyz"
-                            alt="View 2" />
-                    </button>
-                    <button class="gallery__thumb" onclick="switchImage(this, 2)">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAkTIcNcasQ32BIFPOAzgn8F40n5UeYcJiHP0ma9Lh-VAeFVqQJQQr3eCBUcd6_HhpJGHW5Q2Sb1aqBpxWjXO1jtrhhbgZtdxpmsNyGbV_SiIUiQGGZxLQrp3spK99BxnZLKWet4XHRkhfTfdwP7ABYtuKxQmRqBMeW6iYY3IILqFmH-0JALd_l8AfgWAYWlLOaR9MXLTWk-lKSNuTwb1iIpAxx__PtS6AiMiuWThMTJZXme_xlG74mLcd3x-1T68NLsc80rOZ4Kct7"
-                            alt="View 3" />
-                    </button>
-                    <button class="gallery__thumb" onclick="switchImage(this, 3)">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk1nJxS3IH0lh1GepW9Xe5oEH8ELAvlj11dlXCs74EU3S3zBTDft2USU0RRqcD3H7Xghy6qYQzr23uvZJM1BCWmt14yMo4smSmEQ476nZIo98DUKRiVl6HO7BZNRD-V7DLrRl0Mzl3mI06l2uM6paKKEjcSPh-dio7qEJuUdUHGHqyQdEoEeCQgCRQ-hmfoSPNhEkdwqUG_JaRGqU29xlP5nrI7CJHhnyQq0Vm65U-YLKcxAYcPEsFtt1jxVuhXvW_6G1hfqwR4Sqy"
-                            alt="View 4" />
-                    </button>
-                </div>
+                <div class="gallery__thumbnails" id="thumbnails"></div>
 
                 <div class="gallery__main">
-                    <img id="main-image"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDJGRtVDxIFrmS-8cjasXiGgo17jW7noBBgoGku2blFjtH02eu4i_nj8InUOy0-VvzMEjfjJpiZ9R0OOxz42CK6E8hNa1LizssBYb_Gy6oWSJqVWdsSmBaWJ2RRjRy4qFxPrJrXBs2PpD837yV6sqz8-h3QJIgnPU2QkkaUQiX0e7Pj4A9nObpGfj26Yz3zzfO-W_ebuWugMPsP8gBby4cUP7JI3rAFu3QekOrvg49127-op4GvNaF8iFniReq2jpUymXaKhupHYycc"
-                        alt="NovaBook Pro X1" />
-                    <span class="gallery__badge">New Arrival</span>
+                    <img id="main-image" src="" alt="" />
+                    <span class="gallery__badge" id="product-badge">New Arrival</span>
                 </div>
             </div>
 
             <!-- Product Info -->
             <div class="product-info">
                 <div class="product-info__header">
-                    <h1>NovaBook Pro X1</h1>
-                    <div class="product-info__rating">
+                    <h1 id="product-name"></h1>
+                    <!-- <div class="product-info__rating">
                         <div class="stars">
                             <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
                             <span class="material-symbols-outlined" style="font-variation-settings:'FILL' 1">star</span>
@@ -97,50 +66,25 @@
                                 style="font-variation-settings:'FILL' 0">star_half</span>
                         </div>
                         <span class="rating-count">(128 reviews)</span>
-                    </div>
-                    <div class="product-info__price">$1,899.00</div>
+                    </div> -->
+
+                    <div class="product-info__price" id="product-price"></div>
                 </div>
 
                 <!-- Specs -->
-                <div class="specs-grid">
-                    <div class="spec-card">
-                        <div class="spec-card__label">Processor</div>
-                        <div class="spec-card__value">T2 Neon Chip</div>
-                    </div>
-                    <div class="spec-card">
-                        <div class="spec-card__label">Memory</div>
-                        <div class="spec-card__value">32GB Unified</div>
-                    </div>
-                    <div class="spec-card">
-                        <div class="spec-card__label">Storage</div>
-                        <div class="spec-card__value">Up to 2TB SSD</div>
-                    </div>
-                    <div class="spec-card">
-                        <div class="spec-card__label">Battery</div>
-                        <div class="spec-card__value">22 Hours</div>
-                    </div>
-                </div>
+                <div class="specs-grid" id="specs-grid"></div>
+
 
                 <!-- Options -->
                 <div class="options">
                     <div>
                         <div class="option-label">Color</div>
-                        <div class="color-options">
-                            <button class="color-btn active" style="background:#0b0e14" title="Midnight"
-                                onclick="selectColor(this)"></button>
-                            <button class="color-btn" style="background:#3d424d" title="Space Gray"
-                                onclick="selectColor(this)"></button>
-                            <button class="color-btn" style="background:#e3e4e6" title="Silver"
-                                onclick="selectColor(this)"></button>
-                        </div>
+                        <div class="color-options" id="color-options"></div>
                     </div>
-                    <div>
+
+                    <div id="storage-wrapper">
                         <div class="option-label">Storage</div>
-                        <div class="storage-options">
-                            <button class="storage-btn active" onclick="selectStorage(this)">128GB</button>
-                            <button class="storage-btn" onclick="selectStorage(this)">256GB</button>
-                            <button class="storage-btn" onclick="selectStorage(this)">512GB</button>
-                        </div>
+                        <div class="storage-options" id="storage-options"></div>
                     </div>
                 </div>
 
@@ -153,11 +97,19 @@
                 <!-- Perks -->
                 <div class="perks">
                     <div class="perk">
-                        <span class="material-symbols-outlined">local_shipping</span>
+                        <svg class="blue-icons" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                            <path
+                                d="M64 160C64 124.7 92.7 96 128 96L416 96C451.3 96 480 124.7 480 160L480 192L530.7 192C547.7 192 564 198.7 576 210.7L621.3 256C633.3 268 640 284.3 640 301.3L640 448C640 483.3 611.3 512 576 512L572.7 512C562.3 548.9 528.3 576 488 576C447.7 576 413.8 548.9 403.3 512L300.7 512C290.3 548.9 256.3 576 216 576C175.7 576 141.8 548.9 131.3 512L128 512C92.7 512 64 483.3 64 448L64 400L24 400C10.7 400 0 389.3 0 376C0 362.7 10.7 352 24 352L136 352C149.3 352 160 341.3 160 328C160 314.7 149.3 304 136 304L24 304C10.7 304 0 293.3 0 280C0 266.7 10.7 256 24 256L200 256C213.3 256 224 245.3 224 232C224 218.7 213.3 208 200 208L24 208C10.7 208 0 197.3 0 184C0 170.7 10.7 160 24 160L64 160zM576 352L576 301.3L530.7 256L480 256L480 352L576 352zM256 488C256 465.9 238.1 448 216 448C193.9 448 176 465.9 176 488C176 510.1 193.9 528 216 528C238.1 528 256 510.1 256 488zM488 528C510.1 528 528 510.1 528 488C528 465.9 510.1 448 488 448C465.9 448 448 465.9 448 488C448 510.1 465.9 528 488 528z" />
+                        </svg>
                         Free Shipping
                     </div>
                     <div class="perk">
-                        <span class="material-symbols-outlined">verified_user</span>
+                        <svg class="blue-icons" xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 640 640"><!--!Font Awesome Free v7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2026 Fonticons, Inc.-->
+                            <path
+                                d="M470.5 463.6C451.4 416.9 405.5 384 352 384L288 384C234.5 384 188.6 416.9 169.5 463.6C133.9 426.3 112 375.7 112 320C112 205.1 205.1 112 320 112C434.9 112 528 205.1 528 320C528 375.7 506.1 426.2 470.5 463.6zM430.4 496.3C398.4 516.4 360.6 528 320 528C279.4 528 241.6 516.4 209.5 496.3C216.8 459.6 249.2 432 288 432L352 432C390.8 432 423.2 459.6 430.5 496.3zM320 576C461.4 576 576 461.4 576 320C576 178.6 461.4 64 320 64C178.6 64 64 178.6 64 320C64 461.4 178.6 576 320 576zM320 304C297.9 304 280 286.1 280 264C280 241.9 297.9 224 320 224C342.1 224 360 241.9 360 264C360 286.1 342.1 304 320 304zM232 264C232 312.6 271.4 352 320 352C368.6 352 408 312.6 408 264C408 215.4 368.6 176 320 176C271.4 176 232 215.4 232 264z" />
+                        </svg>
                         2 Year Warranty
                     </div>
                 </div>
@@ -166,108 +118,84 @@
 
 
         <!-- Related Products -->
+        <!-- You Might Also Like -->
         <section class="related-section">
             <h2 class="section-title">You Might Also Like</h2>
-            <div class="related-grid">
-                <div class="related-card">
-                    <div class="related-card__img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-pYHbtFeLgtGAy3PddyxWvYh72Ujw8dWdzNZojHlx1aCgtbphLHQSYYwsCl7ddKCnPqPgcOKdaD-FLtOtOEvO-Kv78st4yN6-Gw5X_ZeGorjB1dBO3iNbenj7XYYMqxW6LwSVbimqs0JWdvtxsCU6tWMt9ZxM9KLiBAQdQjHK4WR6GKMONdaSouZ1_EUoz9OB7K49UJfD3D8_FtCTOoCRcEgYikmPaxaRTmgn3UAFpPDlB2FA6wHmhkFttHPAfs4-9NnAFhJkMu0p"
-                            alt="NovaTab Ultra" />
-                    </div>
-                    <div class="related-card__body">
-                        <div class="related-card__name">NovaTab Ultra</div>
-                        <div class="related-card__desc">The ultimate creative companion.</div>
-                        <div class="related-card__footer">
-                            <span class="related-card__price">$999</span>
-                            <span class="material-symbols-outlined related-card__arrow">arrow_forward</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="related-card">
-                    <div class="related-card__img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBoBho7Zfqb81oQlKkb0yW73AOkvq1jNzGM3M0yTst14S3mZW9_sOADyopts3KuhrPdLKVxMUwpDX6M9TEwIVDNwvRnT1CPgLyE0qKRgI_Bammlnbb0mv6aaIJUKbdgxtPkBbYLUqhFSJxF0MGHpYwizsJyHQofCxk8BTVUGoahf_pc2HurtD1JXLHo2aUsz0AvrTB063JXuRgV64XUpJjgQd61lbYIlLeCB4-GS30xyg69easzH8N7vQ-b8A8bgltzrMK5bI5VMnMm"
-                            alt="NovaPhone 15 Pro" />
-                    </div>
-                    <div class="related-card__body">
-                        <div class="related-card__name">NovaPhone 15 Pro</div>
-                        <div class="related-card__desc">Precision in your pocket.</div>
-                        <div class="related-card__footer">
-                            <span class="related-card__price">$1,199</span>
-                            <span class="material-symbols-outlined related-card__arrow">arrow_forward</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="related-card">
-                    <div class="related-card__img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBS6AMmw3_8thbVVwzufIBV9q6UsTKlhQjm-gaPS7F9Gst-76NAq_QSucPoE9vyuwdolHIJ6ugU5069C18nH6baqg3afHtmct5cNW9QHJzbZ99KtysjHfXYa5ynQ8BPllDpEOqnX5jqUQxCLvWuWudZYlaNOFpLvUGeqnLniV6utZOhkEhte9Glo11t6u1c07h4uWh9ZMrS0nJOQShT4ZzXXlOaqqPvOXFIA4iTB2UmOB_0DKsGAzhiIWKNHS7IlnfECf569mv3bGCi"
-                            alt="SonicNova Studio" />
-                    </div>
-                    <div class="related-card__body">
-                        <div class="related-card__name">SonicNova Studio</div>
-                        <div class="related-card__desc">Spatial audio redefined.</div>
-                        <div class="related-card__footer">
-                            <span class="related-card__price">$349</span>
-                            <span class="material-symbols-outlined related-card__arrow">arrow_forward</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="related-card">
-                    <div class="related-card__img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDU21lWmMrWF733byw-eG690KTujjuxZq5s_tgjAp3wlgwNcSc0HZ1RGgl_CIkDyssxAuLCU8z1eu5PrK8nmzqg4wTdyzLL398SNH7FBIZPMNG6t8ZXjM2-FVai8eHcKI_DYA9AGzIjNH8CDxYlEwLy3YKeN_ENpIQMK-Z7qkA9_hnUwABAIl62nIWqQRmlWqO-8IllZYtt6NQrCDYxizOFx0XxJom4zdf0R8gvLfPFjyWCgtvhke5qrs_-1QQobX1gLgDAVme4xA5K"
-                            alt="Nova Drive 2TB" />
-                    </div>
-                    <div class="related-card__body">
-                        <div class="related-card__name">Nova Drive 2TB</div>
-                        <div class="related-card__desc">Blazing fast external storage.</div>
-                        <div class="related-card__footer">
-                            <span class="related-card__price">$199</span>
-                            <span class="material-symbols-outlined related-card__arrow">arrow_forward</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="related-grid" id="related-grid"></div>
         </section>
 
     </main>
 
     <!-- ── Footer ──────────────────────────────────────────── -->
-    <footer>
-        <div class="footer__inner">
-            <div>
-                <div class="footer__brand-name">Nuvix</div>
-                <p class="footer__tagline">Elevating human potential through cutting-edge hardware and seamless
-                    integration. Engineered for the next generation.</p>
-            </div>
-            <div class="footer__links-group">
-                <div class="footer__col">
-                    <div class="footer__col-title">Store Info</div>
-                    <ul>
-                        <li><a href="#">Find a Store</a></li>
-                        <li><a href="#">Corporate</a></li>
-                        <li><a href="#">Support</a></li>
-                    </ul>
+    <footer class="footer">
+        <div class="footer__grid">
+    
+            <div class="footer__brand">
+                <div class="footer__brand-logo">Nuvix</div>
+                <p>Engineering the future of personal electronics with uncompromising precision and atmospheric design.
+                </p>
+                <div class="footer__socials">
+                    <a href="#" class="social-btn" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <path
+                                d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" />
+                        </svg>
+                    </a>
                 </div>
-                <div class="footer__col">
-                    <div class="footer__col-title">Social</div>
-                    <ul>
-                        <li><a href="#">Twitter</a></li>
-                        <li><a href="#">Instagram</a></li>
-                        <li><a href="#">LinkedIn</a></li>
-                    </ul>
+            </div>
+    
+            <div class="footer__col">
+                <h4>Store Info</h4>
+                <ul>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Shipping</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer__col">
+                <h4>Social</h4>
+                <ul>
+                    <li><a href="#">Instagram</a></li>
+                    <li><a href="#">Twitter</a></li>
+                    <li><a href="#">YouTube</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer__col">
+                <h4>Newsletter</h4>
+                <p class="newsletter__label">Get technical updates and exclusive drops.</p>
+                <div class="newsletter-form">
+                    <input type="email" placeholder="Email address" aria-label="Email address" />
+                    <button aria-label="Subscribe">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2.5" viewBox="0 0 24 24">
+                            <line x1="5" y1="12" x2="19" y2="12" />
+                            <polyline points="12 5 19 12 12 19" />
+                        </svg>
+                    </button>
                 </div>
             </div>
-            <div>
-                <div class="footer__newsletter-title">Newsletter</div>
-                <div class="footer__newsletter-form">
-                    <input type="email" placeholder="Enter your email" />
-                    <button>Join</button>
-                </div>
-                <p class="footer__copy">© 2025 Nuvix Electronics. Engineered for Excellence.</p>
-            </div>
+    
+        </div>
+    
+        <div class="footer__bottom">
+            <p>© 2026 Nuvix Electronics. Engineered for Excellence.</p>
         </div>
     </footer>
 
     <script>
+
+
         // ── Gallery image switcher ──────────────────────────
         const images = [
             "https://lh3.googleusercontent.com/aida-public/AB6AXuDJGRtVDxIFrmS-8cjasXiGgo17jW7noBBgoGku2blFjtH02eu4i_nj8InUOy0-VvzMEjfjJpiZ9R0OOxz42CK6E8hNa1LizssBYb_Gy6oWSJqVWdsSmBaWJ2RRjRy4qFxPrJrXBs2PpD837yV6sqz8-h3QJIgnPU2QkkaUQiX0e7Pj4A9nObpGfj26Yz3zzfO-W_ebuWugMPsP8gBby4cUP7JI3rAFu3QekOrvg49127-op4GvNaF8iFniReq2jpUymXaKhupHYycc",
@@ -294,6 +222,8 @@
             btn.classList.add('active')
         }
     </script>
+    <script src="./js/data.js"></script>
+    <script src="./js/product.js"></script>
 </body>
 
 </html>

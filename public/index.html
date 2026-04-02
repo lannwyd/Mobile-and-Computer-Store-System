@@ -1,63 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nuvix | Engineered for Excellence</title>
+    <title>Nuvix | </title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./css/home.css">
+</head>
+
+<body>
     <nav class="nav">
         <div class="nav__logo">Nuvix</div>
 
         <ul class="nav__links">
             <li><a href="#" class="active">Home</a></li>
-            <li><a href="#">Products</a></li>
-            <li><a href="#">Laptops</a></li>
-            <li><a href="#">Mobiles</a></li>
-            <li><a href="#">Tablets</a></li>
-            <li><a href="#">Accessories</a></li>
+
         </ul>
 
         <div class="nav__actions">
-            <div class="nav__search">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor"
-                    stroke-width="2" viewBox="0 0 24 24">
-                    <circle cx="11" cy="11" r="8" />
-                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            <a href="./cart.html" class="btn-icon""><svg xmlns=" http://www.w3.org/2000/svg" width="18" height="18"
+                fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <circle cx="9" cy="21" r="1" />
+                <circle cx="20" cy="21" r="1" />
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
                 </svg>
-                <input type="text" placeholder="Search tech…" aria-label="Search" />
-            </div>
-            <button class="btn-icon" aria-label="Cart">
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor"
-                    stroke-width="2" viewBox="0 0 24 24">
-                    <circle cx="9" cy="21" r="1" />
-                    <circle cx="20" cy="21" r="1" />
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                </svg>
-            </button>
+            </a>
         </div>
     </nav>
 
     <!-- ══ HERO ══════════════════════════════ -->
     <section class="hero background-gradient">
-        
+
 
         <div class="hero__content">
             <span class="hero__eyebrow">Phones · Laptops · Tablets · Accessories</span>
-            <h1 class="hero__title">Your Next Device<br /><span>Starts Here</span></h1>
+            <h1 class="hero__title">Your Next Device<br /><span>Is Here</span></h1>
             <div class="hero__cta">
-                <button class="btn-primary">Shop Now</button>
+                <a href="#products" class="btn-primary">Shop Now</a>
                 <button class="btn-secondary">Learn More</button>
             </div>
         </div>
     </section>
 
     <!-- ══ CATALOG ════════════════════════════ -->
-    <div class="catalog">
+    <div class="catalog" id="products">
 
         <!-- Sidebar -->
         <aside class="sidebar">
@@ -81,6 +72,8 @@
                     <label class="checkbox-item"><input type="checkbox" /><span>Samsung</span></label>
                     <label class="checkbox-item"><input type="checkbox" /><span>Dell</span></label>
                     <label class="checkbox-item"><input type="checkbox" /><span>HP</span></label>
+                    <label class="checkbox-item"><input type="checkbox" /><span>Lenovo</span></label>
+                    <label class="checkbox-item"><input type="checkbox" /><span>Xiaomi</span></label>
                 </div>
             </div>
 
@@ -95,10 +88,14 @@
                     Price Range
                 </div>
                 <div class="range-wrap">
-                    <input type="range" min="0" max="5000" value="2500" />
-                    <div class="range-labels"><span>$0</span><span>$5,000+</span></div>
+                    <div class="price-inputs">
+                        <input type="number" id="price-min" placeholder="Min" min="0" />
+                        <span>—</span>
+                        <input type="number" id="price-max" placeholder="Max" min="0" />
+                    </div>
                 </div>
             </div>
+
 
             <!-- Device Type -->
             <div class="filter-group">
@@ -111,7 +108,7 @@
                     Device Type
                 </div>
                 <div class="chip-list">
-                    <button class="chip active">Mobile</button>
+                    <button class="chip">Mobile</button>
                     <button class="chip">Laptop</button>
                     <button class="chip">Tablet</button>
                     <button class="chip">Accessories</button>
@@ -122,8 +119,17 @@
         <!-- Main -->
         <div class="main-content">
             <div class="sort-bar">
-                <h2>Curated Inventory <span>(24 results)</span></h2>
+                <h2>Our Products <span id="results-number">(24 results)</span></h2>
+
                 <div class="sort-controls">
+                    <div class="nav__search">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor"
+                            stroke-width="2" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="8" />
+                            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                        </svg>
+                        <input type="text" placeholder="Search tech…" aria-label="Search" />
+                    </div>
                     <label for="sort">Sort By</label>
                     <select id="sort">
                         <option>Newest</option>
@@ -133,200 +139,13 @@
                 </div>
             </div>
 
-            <div class="product-grid">
-
-                <!-- Card 1 -->
-                <div class="product-card">
-                    <div class="card-img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS0hIhAWmkPGT2ujavqy-RVlc_cvWMufsNHQXk_Se1sssGMDiJBzxlfdzyhTyLY2uPDxqxx9SjqnVtzIry7QBapGi2WAa1m56Cflp8YbXTheaZ31RvWfsliEMAl8Xmlem6iIjtw_5_3FatQovRysNusE8AascUss1vhR43Ih5LS-P6fiYHRa2hG3GSY0fmk4tbuWw3tQ04x6tjFQe7nkPRwpRX0x2WaeM-hSLZnhw5ilPFMiSVSdIJWRZtiqpLzy9TURGp5sYo0WRY"
-                            alt="Nexus Ultra 16" />
-                    </div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <a href="product.html">
-                                <h3>Nexus Ultra 16</h3>
-                            </a>
-                            <span class="badge badge--new">NEW</span>
-                        </div>
-                        <div class="card-tags">
-                            <span class="tag">32GB RAM</span>
-                            <span class="tag">1TB SSD</span>
-                        </div>
-                        <div class="card-footer">
-                            <span class="price">$2,499</span>
-                            <button class="add-btn" aria-label="Add to cart">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <circle cx="9" cy="21" r="1" />
-                                    <circle cx="20" cy="21" r="1" />
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="product-card">
-                    <div class="card-img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuB7t_zX3cm3x2O5H8fQpErFD_p9y-gGqJ3dJeAjh90bJGKPGWoukN_FyDrOX6CpcWtsSdN7RZnrb12Q7RmIItb1tfXSN_iD7TrEoh0Vx3m-hTbBuWDgYu2Ccw342qEu-HHbZG2XjMdfNskZ0eGrd-jGX1_S2RMWjC_Z11sWrqXSoLRWgFH4Og7utU5rWftnrDWrf7O_DwqyAIM3QY_cQeIzyQB54ibaE3z6YEKmmiml8dobd9ukcxfKaOzxME99vHh1PEH6UBFRdHWp"
-                            alt="Nova S24 Pro" />
-                    </div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <h3>Nova S24 Pro</h3>
-                            <span class="badge badge--stock"><span class="dot"></span><span>In Stock</span></span>
-                        </div>
-                        <div class="card-tags">
-                            <span class="tag">OLED</span>
-                            <span class="tag">120Hz</span>
-                        </div>
-                        <div class="card-footer">
-                            <span class="price">$1,199</span>
-                            <button class="add-btn" aria-label="Add to cart">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <circle cx="9" cy="21" r="1" />
-                                    <circle cx="20" cy="21" r="1" />
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="product-card">
-                    <div class="card-img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdtqk-3o0dKjhFzuJN8fOO15ElrqRFNK6j7UeCpmvBJ-WWs_9l9coxuGAFZqZhMjKMGZr07CgyFJtHznonvkkUrkIHHtYoPcasK6pIbJOPY6gPoSSWyfud9C-cJCdrRwlFDxXdCWiW5HsYRf7nFK5TIEYZZNeKvSzsTW9ZzxmCaO9PS74h_Hm2YaIHM21mrPIzertRbnwpLiLuTS-QXAUyDqA1k17LF5DKu1EMS5goYLwOGajtciebHH5D2Q9eJswnrmJ-x87aPr08"
-                            alt="Tab V10 Graphite" />
-                    </div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <h3>Tab V10 Graphite</h3>
-                        </div>
-                        <div class="card-tags">
-                            <span class="tag">Pen Incl.</span>
-                        </div>
-                        <div class="card-footer">
-                            <span class="price">$899</span>
-                            <button class="add-btn" aria-label="Add to cart">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <circle cx="9" cy="21" r="1" />
-                                    <circle cx="20" cy="21" r="1" />
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 4 -->
-                <div class="product-card">
-                    <div class="card-img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc4PXKDDibUuwrt_aazr_dIocL2YHE0PxQZZUEr_N3yfHm3pwRBLB3Fx4SdOJ2oAMiy05dfg6WkVMJwtuqvZRxaeVqVOsLpULQmjz80MqxS8lekE6jurLZRYLldITrp1SgGNpNQrZjjOXr4nXkjmbZPwba9ULmdF93EXh33wxuOV-F8dF6laGucAVNFst907DVosTHwYjTrUNx8M5d3BXiiTc0QV82GZa-npM-Tm_kRK0UpzZGFd51j3Z4iIczGX_IWdHXOG14x84r"
-                            alt="Sonic ANC Headphones" />
-                    </div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <h3>Sonic ANC Headphones</h3>
-                        </div>
-                        <div class="card-tags">
-                            <span class="tag">40h Battery</span>
-                        </div>
-                        <div class="card-footer">
-                            <span class="price">$349</span>
-                            <button class="add-btn" aria-label="Add to cart">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <circle cx="9" cy="21" r="1" />
-                                    <circle cx="20" cy="21" r="1" />
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 5 -->
-                <div class="product-card">
-                    <div class="card-img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBG7moVXIDN5HJtyc_it8BoGT9YsLE7eN7DsZQpOLsnGvSB7qp3zMKrKwhky0wnBodYfHeva39M_yoruQUXlUKVNNL-sNlWJQMc4dh4exXc4TlyeDITmB7IanzUhwQPaEtNXwG-yYGIHsjvmBDgfCK4key-d4KvBNwvpZRs04nPVcnHe8QX47UQrHBYCqK3sER_l6XFR9GlcjfCnt6o8Q7Nl3cCloH68qTLeS4JQjbI7xDFX6gqyxWcXUPQtouBIvHHxGy_ujmHgNsO"
-                            alt="NovaView Curved Monitor" />
-                    </div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <h3>NovaView 34" Curved</h3>
-                        </div>
-                        <div class="card-tags">
-                            <span class="tag">4K UHD</span>
-                            <span class="tag">144Hz</span>
-                        </div>
-                        <div class="card-footer">
-                            <span class="price">$749</span>
-                            <button class="add-btn" aria-label="Add to cart">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <circle cx="9" cy="21" r="1" />
-                                    <circle cx="20" cy="21" r="1" />
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 6 -->
-                <div class="product-card">
-                    <div class="card-img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDPWrhdploEX26atLMIztH1fxdn_cj-jPM_bH3zfCuZ6oVoalEhCi5ynenSHxlzo5TncvJvYNjVdniLSNZNlxf5uFKNmTNCJWj7u7JFD4Ql_3jQzTHXo-PjW4G0ZVhoUtNsqZXXSiM81pKq9JtzUa-Urz_pl63Yg5MVptQcv-EusKY7fn7vTvW6Xtv1QXMTRiShWOm9JlW7jq6fADDL0Dz_kjn132T1ertLu9bsAyZii8s7O8d1ze605BicFIgj4-1taao2X_z5enT9"
-                            alt="Apex Mech Keyboard" />
-                    </div>
-                    <div class="card-body">
-                        <div class="card-header">
-                            <h3>Apex Mech Keyboard</h3>
-                        </div>
-                        <div class="card-tags">
-                            <span class="tag">RGB</span>
-                        </div>
-                        <div class="card-footer">
-                            <span class="price">$189</span>
-                            <button class="add-btn" aria-label="Add to cart">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
-                                    stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-                                    <circle cx="9" cy="21" r="1" />
-                                    <circle cx="20" cy="21" r="1" />
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-            </div><!-- /grid -->
+            <div class="product-grid" id="product-grid"></div><!-- /grid -->
 
             <!-- Pagination -->
-            <div class="pagination">
-                <button class="page-btn" disabled aria-label="Previous">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor"
-                        stroke-width="2" viewBox="0 0 24 24">
-                        <polyline points="15 18 9 12 15 6" />
-                    </svg>
-                </button>
-                <button class="page-btn active">1</button>
-                <button class="page-btn">2</button>
-                <button class="page-btn">3</button>
-                <button class="page-btn" aria-label="Next">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor"
-                        stroke-width="2" viewBox="0 0 24 24">
-                        <polyline points="9 18 15 12 9 6" />
-                    </svg>
-                </button>
-            </div>
+            <div class="pagination" role="navigation" aria-label="Product pages"></div>
 
-        </div><!-- /main-content -->
-    </div><!-- /catalog -->
+        </div>
+    </div>
 
     <!-- ══ FOOTER ════════════════════════════ -->
     <footer class="footer">
@@ -391,28 +210,12 @@
         </div>
 
         <div class="footer__bottom">
-            <p>© 2024 Nuvix Electronics. Engineered for Excellence.</p>
+            <p>© 2026 Nuvix Electronics. Engineered for Excellence.</p>
         </div>
     </footer>
 
-    <script>
-        // Chip toggle
-        document.querySelectorAll('.chip').forEach(chip => {
-            chip.addEventListener('click', () => {
-                document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-                chip.classList.add('active');
-            });
-        });
-
-        // Pagination
-        document.querySelectorAll('.page-btn:not([disabled])').forEach(btn => {
-            btn.addEventListener('click', () => {
-                if (btn.querySelector('svg')) return; // skip arrow buttons
-                document.querySelectorAll('.page-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            });
-        });
-    </script>
-    </body>
+    <script src="./js/data.js"></script>
+    <script src="./js/home.js"></script>
+</body>
 
 </html>
