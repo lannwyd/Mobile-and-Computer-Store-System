@@ -1,0 +1,43 @@
+.status-info {
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.status-info p {
+    font-size: .875rem;
+    margin: .5rem 0;
+    color: var(--text);
+}
+
+.status-info strong {
+    color: var(--primary);
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+@media (max-width: 768px) {
+    .toolbar {
+        flex-direction: column;
+    }
+
+    .search-input,
+    .select-control,
+    .btn-primary {
+        width: 100%;
+    }
+
+    .data-table th:nth-child(n+3),
+    .data-table td:nth-child(n+3) {
+        display: none;
+    }
+
+    .data-table th:last-child,
+    .data-table td:last-child {
+        display: table-cell;
+    }
+}
