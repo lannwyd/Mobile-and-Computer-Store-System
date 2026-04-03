@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login | Nuvix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..700;1,9..40,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/admin/login.css">
+
+</head>
+<body>
+    <div class="login-wrapper">
+        <div class="login-container">
+            <div class="login-card">
+                <div class="login-header">
+                    <h1 class="logo">Nuvix</h1>
+                    <p>Admin Panel</p>
+                </div>
+
+                <form class="login-form" id="loginForm">
+                    <div class="form-group">
+                        <label for="email">Email or Username</label>
+                        <input type="text" id="email" placeholder="admin@store.com" autocomplete="off">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" placeholder="••••••••" autocomplete="off">
+                    </div>
+
+                    <div id="errorMessage" class="error-message"></div>
+
+                    <button type="submit" class="btn-login">Sign In</button>
+                </form>
+
+                <div class="login-footer">
+                    <p>Test Credentials:</p>
+                    <p><strong>Email:</strong> admin@store.com</p>
+                    <p><strong>Password:</strong> admin123</p>
+                </div>
+            </div>
+
+            <!-- <div class="login-bg">
+                <svg width="200" height="200" viewBox="0 0 200 200" fill="none">
+                    <circle cx="100" cy="100" r="80" stroke="#adc6ff" stroke-width="2" opacity="0.1"/>
+                    <circle cx="100" cy="100" r="60" stroke="#6b97e8" stroke-width="2" opacity="0.15"/>
+                    <circle cx="100" cy="100" r="40" stroke="#adc6ff" stroke-width="2" opacity="0.2"/>
+                </svg>
+            </div> -->
+        </div>
+    </div>
+
+    <script src="../js/admin/data/users.js"></script>
+    <script src="../js/admin/login.js"></script>
+</body>
+</html>

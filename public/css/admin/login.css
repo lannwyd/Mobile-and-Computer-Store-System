@@ -1,0 +1,212 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg: #070d1c;
+    --surface: #0e1628;
+    --surface-2: #141d30;
+    --surface-3: #1b2438;
+    --border: rgba(173, 198, 255, .1);
+    --primary: #adc6ff;
+    --primary-dim: #6b97e8;
+    --accent: #ffb786;
+    --text: #dae2fd;
+    --muted: #7b86a8;
+    --font-head: 'Arimo', sans-serif;
+    --font-body: 'DM Sans', sans-serif;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--bg);
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.login-wrapper {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.login-container {
+    /* position: relative; */
+    width: 100%;
+    max-width: 450px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .login-bg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+    z-index: 0;
+} */
+
+.login-card {
+    /* position: relative;
+    z-index: 1; */
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    padding: 3rem;
+    width: 100%;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, .4);
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.logo {
+    font-family: var(--font-head);
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -.04em;
+    margin-bottom: .5rem;
+}
+
+.login-header p {
+    font-size: .9rem;
+    color: var(--muted);
+    letter-spacing: .05em;
+    text-transform: uppercase;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.form-group label {
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    color: var(--muted);
+}
+
+.form-group input {
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: .9rem 1.25rem;
+    font-size: .95rem;
+    color: var(--text);
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.form-group input::placeholder {
+    color: var(--muted);
+}
+
+.form-group input:focus {
+    border-color: var(--primary-dim);
+    box-shadow: 0 0 0 3px rgba(173, 198, 255, .1);
+}
+
+.error-message {
+    background: rgba(255, 107, 107, .15);
+    border: 1px solid rgba(255, 107, 107, .3);
+    border-radius: 8px;
+    padding: .75rem 1rem;
+    font-size: .85rem;
+    color: #ff6b6b;
+    display: none;
+}
+
+.error-message.show {
+    display: block;
+}
+
+.btn-login {
+    padding: .95rem 1.5rem;
+    background: var(--primary);
+    color: #001a42;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: .95rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: opacity .2s, transform .2s, box-shadow .2s;
+    box-shadow: 0 4px 24px rgba(173, 198, 255, .2);
+}
+
+.btn-login:hover {
+    opacity: .88;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 32px rgba(173, 198, 255, .3);
+}
+
+.btn-login:active {
+    transform: scale(.96);
+}
+
+.login-footer {
+    background: var(--surface-3);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    font-size: .8rem;
+}
+
+.login-footer p {
+    margin: .35rem 0;
+    color: var(--text);
+}
+
+.login-footer p:first-child {
+    color: var(--muted);
+    font-weight: 700;
+    margin-bottom: .5rem;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+}
+
+.login-footer strong {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+@media (max-width: 640px) {
+    .login-card {
+        padding: 2rem;
+    }
+
+    .logo {
+        font-size: 2rem;
+    }
+
+    .login-wrapper {
+        padding: 1rem;
+    }
+}

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products Management | Nuvix Admin</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..700;1,9..40,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/admin/products.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="navbar__logo">Nuvix Admin</div>
+        <ul class="navbar__links">
+            <li><a href="./dashboard.html">Dashboard</a></li>
+            <li><a href="./products.html" class="active">Products</a></li>
+            <li><a href="./orders.html">Orders</a></li>
+            <li><a href="./users.html">Users</a></li>
+        </ul>
+        <div class="navbar__actions">
+            <button class="btn-icon" id="logoutBtn" title="Logout">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                    <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                    <polyline points="16 17 21 12 16 7"></polyline>
+                    <line x1="21" y1="12" x2="9" y2="12"></line>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar__header">
+            <h2>Navigation</h2>
+        </div>
+        <ul class="sidebar__list">
+            <li class="sidebar__item">
+                <a href="./dashboard.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    Dashboard
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="./products.html" class="active">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                    Products
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="./orders.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M9 11l3 3L22 4"></path>
+                        <path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z"></path>
+                    </svg>
+                    Orders
+                </a>
+            </li>
+            <li class="sidebar__item">
+                <a href="./users.html">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                    Users
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main>
+        <div class="page-header">
+            <h1>Products Management</h1>
+            <p>Add, edit, and manage all products</p>
+        </div>
+
+        <!-- Toolbar -->
+        <div class="toolbar">
+            <input type="text" id="searchInput" class="search-input" placeholder="Search products...">
+            <select id="typeFilter" class="select-control">
+                <option value="">All Types</option>
+                <option value="Mobile">Mobile</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Accessories">Accessories</option>
+            </select>
+            <button class="btn-primary" id="addProductBtn">+ Add Product</button>
+        </div>
+
+        <!-- Products Table -->
+        <div class="table-container">
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Brand</th>
+                        <th>Type</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="productsBody">
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Add/Edit Product Modal -->
+    <div class="modal" id="productModal">
+        <div class="modal__content">
+            <div class="modal__header">
+                <h2 class="modal__title" id="modalTitle">Add Product</h2>
+                <button class="modal__close" id="closeModalBtn">&times;</button>
+            </div>
+
+            <form id="productForm" class="product-form">
+                <div class="form-group">
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" placeholder="Product name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productBrand">Brand</label>
+                    <input type="text" id="productBrand" placeholder="Brand name" required>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productType">Type</label>
+                        <select id="productType" required>
+                            <option value="">Select type</option>
+                            <option value="Mobile">Mobile</option>
+                            <option value="Laptop">Laptop</option>
+                            <option value="Tablet">Tablet</option>
+                            <option value="Accessories">Accessories</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productPrice">Price (د.ج)</label>
+                        <input type="number" id="productPrice" placeholder="0" min="0" required>
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="productStock">Stock</label>
+                        <input type="number" id="productStock" placeholder="0" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="productImage">Image URL</label>
+                        <input type="text" id="productImage" placeholder="https://...">
+                    </div>
+                </div>
+
+                <!-- Color Selection Section -->
+                <div class="form-group">
+                    <label>Available Colors</label>
+                    <p class="color-hint">Select preset colors or add custom ones</p>
+                    
+                    <!-- Color Swatches -->
+                    <div class="color-swatches" id="colorSwatches">
+                        <button type="button" class="color-swatch" data-color="Midnight Black" data-hex="#1a1a1a" title="Midnight Black">
+                            <span class="swatch-dot"></span>
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button type="button" class="color-swatch" data-color="Pearl White" data-hex="#f5f5f5" title="Pearl White">
+                            <span class="swatch-dot"></span>
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button type="button" class="color-swatch" data-color="Platinum Silver" data-hex="#c0c0c0" title="Platinum Silver">
+                            <span class="swatch-dot"></span>
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button type="button" class="color-swatch" data-color="Space Gray" data-hex="#6b7280" title="Space Gray">
+                            <span class="swatch-dot"></span>
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button type="button" class="color-swatch" data-color="Midnight Blue" data-hex="#1c3a5e" title="Midnight Blue">
+                            <span class="swatch-dot"></span>
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button type="button" class="color-swatch" data-color="Alpine Blue" data-hex="#5b8db8" title="Alpine Blue">
+                            <span class="swatch-dot"></span>
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button type="button" class="color-swatch" data-color="Forest Green" data-hex="#2d6a4f" title="Forest Green">
+                            <span class="swatch-dot"></span>
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button type="button" class="color-swatch" data-color="Rose Gold" data-hex="#b76e79" title="Rose Gold">
+                            <span class="swatch-dot"></span>
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button type="button" class="color-swatch" data-color="Starlight Gold" data-hex="#d4a96a" title="Starlight Gold">
+                            <span class="swatch-dot"></span>
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button type="button" class="color-swatch" data-color="Lavender Purple" data-hex="#9b8ec4" title="Lavender Purple">
+                            <span class="swatch-dot"></span>
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button type="button" class="color-swatch" data-color="Coral Red" data-hex="#e05c5c" title="Coral Red">
+                            <span class="swatch-dot"></span>
+                            <span class="swatch-check">✓</span>
+                        </button>
+                        <button type="button" class="color-swatch" data-color="Titanium" data-hex="#c8bfb0" title="Titanium">
+                            <span class="swatch-dot"></span>
+                            <span class="swatch-check">✓</span>
+                        </button>
+                    </div>
+
+                    <!-- Custom Color Input -->
+                    <div class="custom-color-input">
+                        <input type="text" id="customColorName" placeholder="Custom color name (e.g., Deep Purple)">
+                        <input type="color" id="customColorHex" value="#3b5fc0" title="Pick a color">
+                        <button type="button" id="addCustomColorBtn" class="btn-secondary">Add Color</button>
+                    </div>
+
+                    <!-- Selected Colors Display -->
+                    <div class="selected-colors" id="selectedColors">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Description</label>
+                    <textarea id="productDescription" placeholder="Product description"></textarea>
+                </div>
+
+                <div class="modal__footer">
+                    <button type="button" class="btn-secondary" id="cancelBtn">Cancel</button>
+                    <button type="submit" class="btn-primary">Save Product</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer__grid">
+            <div class="footer__brand">
+                <div class="footer__brand-logo">Nuvix</div>
+                <p>Engineering the future of personal electronics with uncompromising precision and atmospheric design.</p>
+                <div class="footer__socials">
+                    <a href="#" class="social-btn" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer__col">
+                <h4>Store Info</h4>
+                <ul>
+                    <li><a href="#">Locations</a></li>
+                    <li><a href="#">Support</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Admin</h4>
+                <ul>
+                    <li><a href="../dashboard/dashboard.html">Dashboard</a></li>
+                    <li><a href="./products.html">Manage Products</a></li>
+                </ul>
+            </div>
+            <div class="footer__col">
+                <h4>Support</h4>
+                <ul>
+                    <li><a href="#">Documentation</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <p>© 2026 Nuvix Electronics. Engineered for Excellence.</p>
+        </div>
+    </footer>
+
+    <script src="../js/admin/data/products.js"></script>
+    <script src="../js/admin/data/users.js"></script>
+    <script src="../js/admin/products.js"></script>
+</body>
+</html>
