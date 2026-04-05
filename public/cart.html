@@ -5,9 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cart | Nuvix</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
-        rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="./css/cart.css">
 </head>
 
@@ -16,12 +18,12 @@
     <!-- Navbar -->
     <nav class="nav">
         <div class="nav__logo">Nuvix</div>
-    
+
         <ul class="nav__links">
-            <li><a href="#" class="active">Home</a></li>
-    
+            <li><a href="./index.html" class="active">Home</a></li>
+
         </ul>
-    
+
         <div class="nav__actions">
             <a href="./cart.html" class="btn-icon""><svg xmlns=" http://www.w3.org/2000/svg" width="18" height="18"
                 fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
@@ -42,8 +44,8 @@
                 <h1 class="page-header__title">Cart</h1>
                 <p class="page-header__sub">Review your selected items before proceeding to checkout.</p>
             </div>
-            <a href="#" class="continue-link">
-                <span class="material-symbols-outlined">arrow_back</span>
+            <a href="./index.html" class="continue-link">
+                <i class="fa-solid fa-arrow-left"></i>
                 Continue Shopping
             </a>
         </div>
@@ -52,112 +54,14 @@
         <div class="cart-layout">
 
             <!-- Cart Items -->
-            <div class="cart-items-col">
+            <div class="cart-items-col" id="cart-items-col">
+                <!-- Cart items will be dynamically inserted here -->
+            </div>
 
-                <!-- Item 1 -->
-                <div class="cart-item">
-                    <div class="cart-item__img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjc21Bex5BPVUgMfY6o3e8PHtARDD-o00yXmS23pAmGrvKlmW-CrOMKqX-zpWmt_i9IUmkkWoOmUUlvpcgs2YsQRQU55VMwFsPN3Gt5-cVtT1Ns-zLNWNklYsjNUM1z_4Ocu9E9ZPHvk5843U8lRJpM_uEgRwtkYkLH5FAEF2skrqmMIDbixPPb7vi9wktt7E3LlltzlLgYYF6DSKqSO8ejYVxvJPMIUSxEHL9PLHG4ickkP1gzv5CoXCt2KGrISJM_GZcTbdl0nRv"
-                            alt="Nuvix Pro 15" />
-                    </div>
-                    <div class="cart-item__body">
-                        <div class="cart-item__top">
-                            <div>
-                                <div class="cart-item__name">Nuvix Pro 15</div>
-                                <div class="cart-item__tags">
-                                    <span class="tag">1TB SSD</span>
-                                    <span class="tag">32GB RAM</span>
-                                </div>
-                            </div>
-                            <span class="cart-item__price">$2,499.00</span>
-                        </div>
-                        <div class="cart-item__bottom">
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, -1)" aria-label="Decrease">
-                                    <span class="material-symbols-outlined">remove</span>
-                                </button>
-                                <span class="qty-value">1</span>
-                                <button class="qty-btn" onclick="changeQty(this, 1)" aria-label="Increase">
-                                    <span class="material-symbols-outlined">add</span>
-                                </button>
-                            </div>
-                            <button class="btn-remove" onclick="removeItem(this)">
-                                <span class="material-symbols-outlined">delete</span>
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 2 -->
-                <div class="cart-item">
-                    <div class="cart-item__img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuAxXspxymq19KLArHUUsPop3DEZONzk6-J3Gn9K4BEihrcIDbLPiLqfPKIjp1fsPtXcY6iOwVpOKM7hDOWPYRcZ3KqU5SwT64TkYtiCpgCn4zYjl2VFEUH_eCTC4FV1oyw_zSowdvHeHCXZavIt50-P7SaDKvGqgx9vUMCE6uQ7XonhOBgzPV35nzysXZ6ZYP2b6ssntjLRWvddhSW4Wt_UO3p3QCraFCCEiUki8kSN6ZrS5Yy9OkFLsTS1f-WrPrY20rEc-FbEiYAo"
-                            alt="Nuvix X Watch" />
-                    </div>
-                    <div class="cart-item__body">
-                        <div class="cart-item__top">
-                            <div>
-                                <div class="cart-item__name">Nuvix X</div>
-                                <div class="cart-item__tags">
-                                    <span class="tag">Titanium</span>
-                                    <span class="tag">LTE</span>
-                                </div>
-                            </div>
-                            <span class="cart-item__price">$499.00</span>
-                        </div>
-                        <div class="cart-item__bottom">
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, -1)" aria-label="Decrease">
-                                    <span class="material-symbols-outlined">remove</span>
-                                </button>
-                                <span class="qty-value">1</span>
-                                <button class="qty-btn" onclick="changeQty(this, 1)" aria-label="Increase">
-                                    <span class="material-symbols-outlined">add</span>
-                                </button>
-                            </div>
-                            <button class="btn-remove" onclick="removeItem(this)">
-                                <span class="material-symbols-outlined">delete</span>
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Item 3 -->
-                <div class="cart-item">
-                    <div class="cart-item__img">
-                        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSXuRmcg6lroiCCeTCBnX9VsMhp6LoUTBPqvg3jxLk_C8q0QJ5YkgS_OO7nX2AtuFi-DnCrlVoh5tDwlxEDA0n-PqXjkLejB85M8ZwKd11n357PR100a8cL0dl_udD7hRyxQ0v2UrUwV316oQYXEpVprdmX6yDhfTG1NCdm7SdYyALYT-CsINpMixEHhU-nauU5-yl73L3pF16AW_rx2nwVy81rSZBUsouvQTfv9aT6RjhuGtvE811jPfpaNOZ3sLn1kmfD_vrfMaA"
-                            alt="Nuvix Audio" />
-                    </div>
-                    <div class="cart-item__body">
-                        <div class="cart-item__top">
-                            <div>
-                                <div class="cart-item__name">Nuvix Audio</div>
-                                <div class="cart-item__tags">
-                                    <span class="tag">Noise Cancelling</span>
-                                </div>
-                            </div>
-                            <span class="cart-item__price">$299.00</span>
-                        </div>
-                        <div class="cart-item__bottom">
-                            <div class="qty-control">
-                                <button class="qty-btn" onclick="changeQty(this, -1)" aria-label="Decrease">
-                                    <span class="material-symbols-outlined">remove</span>
-                                </button>
-                                <span class="qty-value">2</span>
-                                <button class="qty-btn" onclick="changeQty(this, 1)" aria-label="Increase">
-                                    <span class="material-symbols-outlined">add</span>
-                                </button>
-                            </div>
-                            <button class="btn-remove" onclick="removeItem(this)">
-                                <span class="material-symbols-outlined">delete</span>
-                                Remove
-                            </button>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="empty-cart" id="empty-cart" style="display:none;">
+                <span class="material-symbols-outlined">shopping_cart</span>
+                <p>Your cart is empty.</p>
+                <a href="index.html" class="btn-primary">Start Shopping</a>
             </div>
 
             <!-- Summary -->
@@ -170,14 +74,7 @@
                             <span>Subtotal</span>
                             <span id="subtotal">$3,596.00</span>
                         </div>
-                        <div class="summary-row">
-                            <span>Shipping</span>
-                            <span>Free</span>
-                        </div>
-                        <div class="summary-row">
-                            <span>Tax (calculated at checkout)</span>
-                            <span>--</span>
-                        </div>
+
                     </div>
 
                     <div class="summary-divider"></div>
@@ -190,14 +87,14 @@
                     <a href="./checkout.html">
                         <button class="btn-checkout">
                             Proceed to Checkout
-                            <span class="material-symbols-outlined">arrow_forward</span>
+                            <i class="fa-solid fa-credit-card"></i>
                         </button>
 
                     </a>
 
                     <div class="secure-note">
-                        <span class="material-symbols-outlined">lock</span>
-                        <!--Secure Encrypted Checkout-->
+                        <i class="fa-solid fa-lock"></i>
+                        
                     </div>
                 </div>
             </div>
@@ -207,7 +104,7 @@
 
     <footer class="footer">
         <div class="footer__grid">
-    
+
             <div class="footer__brand">
                 <div class="footer__brand-logo">Nuvix</div>
                 <p>Engineering the future of personal electronics with uncompromising precision and atmospheric design.
@@ -230,7 +127,7 @@
                     </a>
                 </div>
             </div>
-    
+
             <div class="footer__col">
                 <h4>Store Info</h4>
                 <ul>
@@ -239,7 +136,7 @@
                     <li><a href="#">Shipping</a></li>
                 </ul>
             </div>
-    
+
             <div class="footer__col">
                 <h4>Social</h4>
                 <ul>
@@ -248,7 +145,7 @@
                     <li><a href="#">YouTube</a></li>
                 </ul>
             </div>
-    
+
             <div class="footer__col">
                 <h4>Newsletter</h4>
                 <p class="newsletter__label">Get technical updates and exclusive drops.</p>
@@ -263,31 +160,17 @@
                     </button>
                 </div>
             </div>
-    
+
         </div>
-    
+
         <div class="footer__bottom">
             <p>© 2026 Nuvix Electronics. Engineered for Excellence.</p>
         </div>
     </footer>
 
-    <script>
-        // Quantity change
-        function changeQty(btn, delta) {
-            const qtyEl = btn.closest('.qty-control').querySelector('.qty-value')
-            let qty = parseInt(qtyEl.textContent) + delta
-            if (qty < 1) qty = 1
-            qtyEl.textContent = qty
-        }
+    <script src="./js/data.js"></script>
+    <script src="./js/cart.js"></script>
 
-        // Remove item
-        function removeItem(btn) {
-            const item = btn.closest('.cart-item')
-            item.style.transition = 'opacity 0.3s, transform 0.3s'
-            item.style.opacity = '0'
-            item.style.transform = 'translateX(20px)'
-            setTimeout(() => item.remove(), 300)
-        }
     </script>
 
 </body>

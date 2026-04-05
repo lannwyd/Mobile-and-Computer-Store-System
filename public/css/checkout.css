@@ -872,7 +872,15 @@
      text-transform: uppercase;
      letter-spacing: 0.1em;
  }
+.field-error {
+    font-size: 0.72rem;
+    color: var(--error);
+    margin-top: 0.2rem;
+}
 
+.field--invalid {
+    border-color: var(--error) !important;
+}
  /* ─── Footer ─────────────────────────────────────────── */
  .footer {
      background: var(--bg);

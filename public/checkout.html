@@ -5,6 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Checkout | Nuvix</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="stylesheet" href="./css/checkout.css">
 </head>
 
@@ -14,7 +19,7 @@
         <div class="nav__logo">Nuvix</div>
 
         <ul class="nav__links">
-            <li><a href="#" class="active">Home</a></li>
+            <li><a href="./index.html" class="active">Home</a></li>
 
         </ul>
 
@@ -37,11 +42,7 @@
             <div class="checkout-form-col">
 
                 <!-- Breadcrumb -->
-                <nav class="breadcrumbs">
-                    <a href="index.html">Home</a>
-                    <span class="material-symbols-outlined">chevron_right</span>
-                    <span>Checkout</span>
-                </nav>
+                
 
                 <form class="checkout-form" id="checkout-form" novalidate>
 
@@ -52,18 +53,18 @@
                         <div class="field-row">
                             <div class="field-group">
                                 <label for="first-name">First name <span class="req">*</span></label>
-                                <input type="text" id="first-name" name="first_name" required placeholder="Rintaro" />
+                                <input type="text" id="first-name" name="first_name" required placeholder="khalid" />
                             </div>
                             <div class="field-group">
                                 <label for="last-name">Last name <span class="req">*</span></label>
-                                <input type="text" id="last-name" name="last_name" required placeholder="Okabe" />
+                                <input type="text" id="last-name" name="last_name" required placeholder="lemeurs" />
                             </div>
                         </div>
 
                         <div class="field-row">
                             <div class="field-group">
                                 <label for="email">Email <span class="req">*</span></label>
-                                <input type="email" id="email" name="email" required placeholder="you@example.com" />
+                                <input type="email" id="email" name="email" required placeholder="ex@example.com" />
                             </div>
                             <div class="field-group">
                                 <label for="phone">Phone <span class="req">*</span></label>
@@ -149,7 +150,7 @@
                     <div class="summary__row">
                         <span>Shipping</span>
                         <span class="summary__value">
-                            Livraison à domicile: <strong id="summary-shipping">500 DZD</strong>
+                            <strong id="summary-shipping"></strong>
                         </span>
                     </div>
                     <div class="summary__row summary__total">
@@ -159,11 +160,11 @@
                 </div>
 
                 <div class="summary__payment-note">
-                    <span class="material-symbols-outlined">payments</span>
+                    <i class="fa-regular fa-credit-card"></i>
                     Pay in Person
                 </div>
 
-                
+
 
                 <button type="submit" form="checkout-form" class="btn-place-order">
                     Place Order
