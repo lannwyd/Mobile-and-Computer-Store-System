@@ -2,6 +2,7 @@
 const ITEMS_PER_PAGE = 15;
 let currentPage = 1;
 let currentList = [];
+let cart = [];
 
 // ── Chip filter (multi-select toggle) ────────────────────────────
 document.querySelectorAll('.chip').forEach(chip => {
@@ -10,6 +11,55 @@ document.querySelectorAll('.chip').forEach(chip => {
         applyFilters();
     });
 });
+
+
+// ── Cart ─────────────────────────────────────────────────────────
+
+function addToCart(productId) {
+    const product = products.find(p => p.id === productId);
+    if (!product) return;
+
+    const existing = cart.find(item => item.id === productId);
+    if (existing) {
+        existing.qty++;
+    } else {
+        cart.push({ ...product, qty: 1 });
+    }
+
+    updateCartBadge();
+    saveCart();
+}
+
+function updateCartBadge() {
+    const badge = document.getElementById('cart-badge');
+    if (!badge) return;
+    const total = cart.reduce((sum, item) => sum + item.qty, 0);
+    if (total === 0) {
+        badge.style.display = 'none';
+    } else {
+        badge.style.display = 'flex';
+        badge.textContent = total > 99 ? '99+' : total;
+        // re-trigger pop animation
+        badge.style.animation = 'none';
+        badge.offsetHeight; // reflow
+        badge.style.animation = '';
+    }
+}
+
+function saveCart() {
+    try { localStorage.setItem('cart', JSON.stringify(cart)); } catch (e) { }
+}
+
+function loadCart() {
+    try {
+        const saved = localStorage.getItem('cart');
+        if (saved) cart = JSON.parse(saved);
+    } catch (e) { }
+    updateCartBadge();
+}
+
+loadCart();
+
 
 // ── Build pagination buttons dynamically ─────────────────────────
 function renderPagination(totalItems) {
@@ -121,15 +171,16 @@ function renderProducts(list, totalCount) {
                     <div class="card-tags">${tags}</div>
                     <div class="card-footer">
                         <span class="price">${product.price.toLocaleString()} DZD</span>
+                        ${inStock ? `
                         <button class="add-btn" type="button" aria-label="Add to cart"
-                            onclick="handleAddToCart(event, ${product.id})">
+                            onclick="event.preventDefault(); event.stopPropagation(); addToCart(${product.id})">
                             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none"
                                 stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                                 <circle cx="9" cy="21" r="1"/>
                                 <circle cx="20" cy="21" r="1"/>
                                 <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
                             </svg>
-                        </button>
+                        </button>` : ''}
                     </div>
                 </div>
             </div>
@@ -137,15 +188,6 @@ function renderProducts(list, totalCount) {
     });
 }
 
-function handleAddToCart(event, id) {
-    event.preventDefault();
-    event.stopPropagation();
-
-    const product = products.find(p => p.id === id);
-    if (!product) return;
-
-    alert(`"${product.name}" added to cart!`);
-}
 
 function applyFilters() {
     const checkedBrands = [];
